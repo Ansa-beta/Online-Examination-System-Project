@@ -7,22 +7,22 @@ POST http://127.0.0.1:8000/question/
 Content-Type:application/json
 
 {
-    "question":"What is the difference between a list and a tuple in Python?",
-    "option_a":"A list is mutable, while a tuple is immutable.",
-    "option_b":"A list is immutable, while a tuple is mutable.",
-    "option_c":"Both are immutable.",
-    "option_d":"Both store only numbers.",
-    "correct_answer":"A list is mutable, while a tuple is immutable."
+    "question": "Which data type stores True or False values?",
+    "option_a": "int",
+    "option_b": "str",
+    "option_c": "bool",
+    "option_d": "float",
+    "correct_answer": "C"
 }
 
 
 ###
-GET http://127.0.0.1:8000/question/3/
+GET http://127.0.0.1:8000/question/8/
 Accept:application/json
 
 
 ###
-PUT http://127.0.0.1:8000/question/2/
+PUT http://127.0.0.1:8000/question/7/
 Content-Type:application/json
 
 {
@@ -31,9 +31,50 @@ Content-Type:application/json
     "option_b":"Tuple",
     "option_c":"Set",
     "option_d":"Dictionary",
-    "correct_answer":"Tuple"
+    "correct_answer":"B"
 }
 
 ###
-DELETE http://127.0.0.1:8000/question/4/
+DELETE http://127.0.0.1:8000/question/6/
+
+
+###
+GET http://127.0.0.1:8000/submission/
+Accept:application/json
+
+###
+POST http://127.0.0.1:8000/submission/
+Content-Type:application/json
+
+{
+    "question_id": 8,
+    "student_name": "Meera",
+    "selected_answer": "A"
+}
+
+
+###
+GET http://127.0.0.1:8000/submission/1/
+Accept: application/json
+
+
+###
+PUT http://127.0.0.1:8000/submission/1/
+Content-Type: application/json
+
+{
+    "question_id": 7,
+    "student_name": "Ansa",
+    "selected_answer": "B",
+    "is_correct": false,
+    "obtained_marks": 0
+}
+
+
+###
+DELETE http://127.0.0.1:8000/submission/1/
+
+
+
+
 
